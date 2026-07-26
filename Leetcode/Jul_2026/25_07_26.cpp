@@ -1,20 +1,21 @@
 class Solution {
 public:
     int maxProduct(int n) {
-        int f = 0;
-        int s = 0;
-
+        int max1 =INT_MIN;
+        int max2 =INT_MIN;
+        
         while(n > 0){
-            int x = n % 10;
-            if(x > s){
-                s = f;
-                f = x;
+           int curr = n % 10;
+           if(curr > max1){
+            max2  = max1;
+            max1 = curr;
+           }
+            else if(curr > max2){
+                max2 = curr;
             }
-            else if(x > s){
-                s = x;
-            }
-            n /= 10;
+              n /= 10;
         }
-        return f * s;
+
+         return max1 * max2;
     }
 };
