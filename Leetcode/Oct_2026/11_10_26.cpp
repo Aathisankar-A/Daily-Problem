@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int sumOfSquares(vector<int>& nums) {
+        int n = nums.size();
+
+        long long sum = 0;
+        for(int i = 1; i*i <= n; i++){
+            if(n % i == 0){
+                sum +=  nums[i-1] * nums[i-1];
+                
+                if(i != n/i){
+                    sum += nums[n/i - 1] * nums[n/i - 1];
+                }
+            }
+        }
+        return sum;
+    }
+};
