@@ -1,4 +1,7 @@
-int n = nums.size();
+class Solution {
+public:
+    int minSwaps(vector<int>& nums) {
+        int n = nums.size();
         vector<array<int, 3>> a(n);
 
         for(int i = 0; i < n; i++){
@@ -32,3 +35,5 @@ int n = nums.size();
         }
 
         return swaps;
+    }
+};
